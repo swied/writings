@@ -2,7 +2,7 @@
 layout: project
 title: "A Deep Dive into the Homeless Crisis"
 slug: homeless-crisis
-thumbnail: /assets/images/homeless.jpg
+thumbnail: /assets/images/homeless-crisis/homeless.jpg
 excerpt: |
   Examining the multifaceted causes and potential solutions to homelessness in modern cities.
 ---
