@@ -4,11 +4,11 @@
     {% for proj in site.projects %}
       <li>
         <details>
-          <summary><a href="{{ proj.url }}">{{ proj.title }}</a></summary>
+          <summary><a href="{{ proj.url | relative_url }}">{{ proj.title }}</a></summary>
           <ul>
             {% assign articles = site.articles | where: "project", proj.slug %}
             {% for art in articles %}
-              <li><a href="{{ art.url }}">{{ art.title }}</a></li>
+              <li><a href="{{ art.url | relative_url }}">{{ art.title }}</a></li>
             {% endfor %}
           </ul>
         </details>

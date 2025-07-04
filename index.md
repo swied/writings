@@ -10,7 +10,7 @@ Welcome to my portfolio of writing projects. Explore the projects below or use t
 <div class="project-grid">
 {% for proj in site.projects %}
   <div class="project-card">
-    <a href="{{ proj.url }}">
+    <a href="{{ proj.url | relative_url }}">
       {% if proj.thumbnail %}
         <img src="{{ proj.thumbnail }}" alt="Thumbnail for {{ proj.title }}">
       {% endif %}

@@ -14,7 +14,7 @@ layout: default
   <ul>
     {% assign project_articles = site.articles | where: "project", page.slug %}
     {% for art in project_articles %}
-      <li><a href="{{ art.url }}">{{ art.title }}</a> <span class="date">{{ art.date | date: "%b %d, %Y" }}</span></li>
+      <li><a href="{{ art.url | relative_url }}">{{ art.title }}</a> <span class="date">{{ art.date | date: "%b %d, %Y" }}</span></li>
     {% endfor %}
   </ul>
 </section>
