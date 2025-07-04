@@ -37,3 +37,4 @@ defaults:
 exclude:
   - node_modules
   - project_plan_files
+  - vendor
