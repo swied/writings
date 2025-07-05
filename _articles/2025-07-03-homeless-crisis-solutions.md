@@ -15,6 +15,13 @@ Yet scaling Housing First programs demands more than anecdotal success stories. 
 
 Permanent housing alone cannot heal the complex trauma that often accompanies life on the streets. Supportive housing weaves clinical care, social-service navigation, and community-building into the fabric of residents’ daily lives. On-site case managers coordinate everything from medication adherence to job-training enrollments, ensuring that tenants do not slip through bureaucratic cracks.
 
+```sql
+select *
+from my_table
+where a=1
+```
+
+
 Crucially, supportive ecosystems must be culturally competent. Programs grounded in trauma-informed design—quiet communal areas, flexible service hours, resident councils—see higher rates of housing retention and tenant satisfaction. These details, while easily overlooked in budget spreadsheets, can mean the difference between a dignified home and a revolving door back to the shelter system.
 
 ## Community-Driven Innovation and Policy Momentum
