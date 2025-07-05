@@ -3,19 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ page.title }} | {{ site.title }}</title>
-  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-  <script defer src="{{ "/assets/js/site.js" | relative_url }}"></script>
+  <title>{{ page.title }} · {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}" />
 </head>
 <body>
-  {% include header.html %}
-  <div class="container">
-    {% include sidebar.html %}
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+      <nav class="top-nav">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/projects/' | relative_url }}">Projects</a>
+        <a href="{{ '/about/' | relative_url }}">About Me</a>
+      </nav>
+    </div>
+  </header>
 
-    <main class="content">
+  <div class="page-wrapper">
+    <aside class="sidebar">
+      {% include sidebar.html %}
+    </aside>
+
+    <main class="site-content">
       {{ content }}
     </main>
   </div>
-  {% include footer.html %}
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+      <p>
+        <a href="https://twitter.com/yourusername">Twitter</a> ·
+        <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>

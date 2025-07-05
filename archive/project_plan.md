@@ -28,13 +28,13 @@ This document outlines the step-by-step plan for designing and building a static
 
 
 
-* **Static Site Generator:** We will use **Jekyll** for generating the website, leveraging its native Markdown processing and GitHub Pages integration.
+* **Static Site Generator:** We will use **Jekyll** for generating the website, leveraging its native Markdown processing and GitHub Pages integration.  I like the Hyde theme.  Use it if possible.
 
 * **Content Storage:**
 
     * All your written articles will be saved as individual Markdown files (`.md`).
 
-    * These Markdown files will include "front matter" (a block of YAML at the top of the file) for metadata like title, author, date, and importantly, which project they belong to.
+    * These Markdown files will include "front matter" (a block of YAML at the top of the file) for metadata like title, author, date, and importantly, which project they belong to.  Projects and articles will always be sorted by default in descending chronological order.
 
 * **Site Structure (Jekyll Specific):**
 
@@ -44,17 +44,19 @@ This document outlines the step-by-step plan for designing and building a static
 
     * Individual articles within each project can be stored in a way that Jekyll can easily process them, potentially within subfolders or by using consistent tagging/categorization in their front matter to link them to their parent project.
 
+    * Assets, like images, should be stored under `_assets` and will be organized into subfolders pertaining to each project and article. 
+
 
 
 ### Part 3: Sample Content and Initial Setup
 
 
 
-* **Sample Content Generation:** I will provide you with sample Markdown files for:
+* **Sample Content Generation:** Generate sample Markdown files for:
 
     * A primary `index.md` (or equivalent) for the main page that will list projects.
 
-    * **At least three sample projects**, including one specifically titled "A deep dive into the homeless crisis," each containing a few individual Markdown articles.
+    * **At least three sample projects**, including one specifically titled "A deep dive into the homeless crisis," each containing a few individual Markdown articles.  Generate names for the other projects, and articles contained within them.
 
     * These sample articles will demonstrate the required Jekyll front matter (e.g., title, date, categories/tags to link to the project).
 

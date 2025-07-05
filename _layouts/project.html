@@ -1,20 +1,23 @@
 ---
 layout: default
 ---
-<section class="project-header">
-  <h1>{{ page.title }}</h1>
+<div class="project-header">
+  <h2>{{ page.title }}</h2>
   {% if page.thumbnail %}
-  <img class="project-thumbnail" src="{{ page.thumbnail | relative_url }}" alt="Thumbnail for {{ page.title }}" />
+    <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }} thumbnail" class="project-thumbnail"/>
   {% endif %}
-  <p>{{ page.excerpt }}</p>
-</section>
-
-<section class="article-list">
-  <h2>Articles in this project</h2>
+  <p class="project-date">{{ page.date | date: "%B %d, %Y" }}</p>
+  <p>{{ page.description }}</p>
+</div>
+<hr/>
+<div class="article-list">
+  <h3>Articles</h3>
   <ul>
-    {% assign project_articles = site.articles | where: "project", page.slug %}
-    {% for art in project_articles %}
-      <li><a href="{{ art.url | relative_url }}">{{ art.title }}</a> <span class="date">{{ art.date | date: "%b %d, %Y" }}</span></li>
+    {% assign articles = site.articles | where: "project", page.slug | sort: "date" | reverse %}
+    {% for article in articles %}
+      <li>
+        <a href="{{ article.url | relative_url }}">{{ article.title }}</a> – <span class="article-date">{{ article.date | date: "%b %d, %Y" }}</span>
+      </li>
     {% endfor %}
   </ul>
-</section>
+</div>

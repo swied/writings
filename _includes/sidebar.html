@@ -1,18 +1,16 @@
-<aside class="sidebar">
-  <h3>Projects</h3>
-  <ul class="project-list">
-    {% for proj in site.projects %}
-      <li>
-        <details>
-          <summary><a href="{{ proj.url | relative_url }}">{{ proj.title }}</a></summary>
-          <ul>
-            {% assign articles = site.articles | where: "project", proj.slug %}
-            {% for art in articles %}
-              <li><a href="{{ art.url | relative_url }}">{{ art.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </details>
-      </li>
-    {% endfor %}
-  </ul>
-</aside>
+<h3 class="sidebar-title">Projects</h3>
+<ul class="sidebar-projects">
+  {% assign sorted_projects = site.projects | sort: "date" | reverse %}
+  {% for project in sorted_projects %}
+    <li class="sidebar-project">
+      <button class="toggle-btn" aria-expanded="false">+</button>
+      <a href="{{ project.url | relative_url }}" class="project-link">{{ project.title }}</a>
+      <ul class="sidebar-articles" hidden>
+        {% assign project_articles = site.articles | where: "project", project.slug | sort: "date" | reverse %}
+        {% for art in project_articles %}
+          <li><a href="{{ art.url | relative_url }}">{{ art.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+</ul>

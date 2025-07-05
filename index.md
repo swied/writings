@@ -1,22 +1,19 @@
 ---
 layout: default
-title: Home
+title: "Writing Projects"
 ---
 
-# Writing Projects
+Welcome to my portfolio of writing projects. Explore the latest work below.
 
-Welcome to my portfolio of writing projects. Explore the projects below or use the sidebar to browse their individual articles.
-
-<div class="project-grid">
-{% for proj in site.projects %}
-  <div class="project-card">
-    <a href="{{ proj.url | relative_url }}">
-      {% if proj.thumbnail %}
-        <img src="{{ proj.thumbnail }}" alt="Thumbnail for {{ proj.title }}">
-      {% endif %}
-      <h3>{{ proj.title }}</h3>
-    </a>
-    <p>{{ proj.excerpt | markdownify }}</p>
-  </div>
-{% endfor %}
-</div>
+<ul class="project-list">
+  {% assign sorted_projects = site.projects | sort: "date" | reverse %}
+  {% for project in sorted_projects %}
+    <li class="project-item">
+      <a href="{{ project.url | relative_url }}">
+        {% if project.thumbnail %}<img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }} thumbnail" class="thumb" />{% endif %}
+        <span class="project-title">{{ project.title }}</span>
+      </a>
+      <span class="project-date">{{ project.date | date: "%b %d, %Y" }}</span>
+    </li>
+  {% endfor %}
+</ul>

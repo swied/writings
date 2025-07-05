@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<section class="project-header">
+  <h1>{{ page.title }}</h1>
+  {% if page.thumbnail %}
+  <img class="project-thumbnail" src="{{ page.thumbnail | relative_url }}" alt="Thumbnail for {{ page.title }}" />
+  {% endif %}
+  <p>{{ page.excerpt }}</p>
+</section>
+
+<section class="article-list">
+  <h2>Articles in this project</h2>
+  <ul>
+    {% assign project_articles = site.articles | where: "project", page.slug %}
+    {% for art in project_articles %}
+      <li><a href="{{ art.url | relative_url }}">{{ art.title }}</a> <span class="date">{{ art.date | date: "%b %d, %Y" }}</span></li>
+    {% endfor %}
+  </ul>
+</section>
