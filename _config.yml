@@ -15,7 +15,7 @@ collections:
     permalink: /projects/:name/
   articles:
     output: true
-    permalink: /projects/:project/:title/
+    permalink: /projects/:name/
 
 # Defaults for front matter
 defaults:
